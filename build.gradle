@@ -20,7 +20,9 @@ dependencies {
 }
 
 tasks.withType(JavaCompile) {
-    options.compilerArgs += ['-Xplugin:Manifold no-bootstrap']
-    options.compilerArgs += ['-Amanifold.source.gs=.*']
-    options.compilerArgs += ['-Amanifold.source.gsp=.*']
+    options.compilerArgs += [
+        '-Xplugin:Manifold no-bootstrap',
+        '-Amanifold.source.gs=.*',
+        '-Amanifold.source.gsp=.*'
+    ]
 }
