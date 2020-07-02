@@ -32,14 +32,14 @@ if (JavaVersion.current() != JavaVersion.VERSION_1_8 &&
     tasks.withType(JavaCompile) {
         // if you DO define a module-info.java file:
         options.compilerArgs += ['-Xplugin:Manifold no-bootstrap', '--module-path', it.classpath.asPath]
-        options.compilerArgs += ['-Amanifold.source.gs=foo\\..*']
-        options.compilerArgs += ['-Amanifold.source.gsp=foo\\..*']
+        options.compilerArgs += ['-Amanifold.source.gs=.*']
+        options.compilerArgs += ['-Amanifold.source.gsp=.*']
     }
 } else {
     tasks.withType(JavaCompile) {
         // If you DO NOT define a module-info.java file:
         options.compilerArgs += ['-Xplugin:Manifold no-bootstrap']
-        options.compilerArgs += ['-Amanifold.source.gs=foo\\..*']
-        options.compilerArgs += ['-Amanifold.source.gsp=foo\\..*']
+        options.compilerArgs += ['-Amanifold.source.gs=.*']
+        options.compilerArgs += ['-Amanifold.source.gsp=.*']
     }
 }
