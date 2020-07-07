@@ -22,6 +22,7 @@ dependencies {
 tasks.withType(JavaCompile) {
     options.compilerArgs += [
         '-Xplugin:Manifold no-bootstrap',
+        "-Amanifold.source=${projectDir}/gsrc/main/gosu ${projectDir}/gsrc/main/res",
         '-Amanifold.source.gs=.*',
         '-Amanifold.source.gsp=.*'
     ]
